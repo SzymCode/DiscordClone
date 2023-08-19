@@ -9,6 +9,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        discord_blue: "#295DE7",
+        discord_blurple: "#7289da",
+        discord_purple: "#5865f2",
+        discord_green: "#3ba55c",
         primary: '#202225',
         secondary: '#5865f2',
         gray: {

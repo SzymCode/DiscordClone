@@ -1,8 +1,8 @@
-import { BsPlus, BsFillLightningFill, BsGearFill } from 'react-icons/bs'
+import { BsPlus, BsFillLightningFill } from 'react-icons/bs'
 import { FaDiscord, FaFire } from 'react-icons/fa'
 
 
-const SideBar = () => {
+export default function SideBar() {
   return (
     <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-primary text-secondary shadow-lg">
       <SideBarIcon icon={<FaDiscord size="28"/>}/>
@@ -13,7 +13,7 @@ const SideBar = () => {
   )
 }
 
-const SideBarIcon = ({ icon, text = 'tooltip 💡' }) => {
+function SideBarIcon({ icon, text = 'tooltip 💡' }) {
   return (
     <div className="sidebar-icon group">
       {icon}
@@ -23,4 +23,3 @@ const SideBarIcon = ({ icon, text = 'tooltip 💡' }) => {
     </div>
   )
 }
-export default SideBar

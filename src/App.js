@@ -1,10 +1,10 @@
 import './styles/styles.css';
-import { SideBar } from "./components"
+import { Header } from "./components"
 
 function App() {
   return (
-    <div className="w-full h-screen">
-      <SideBar/>
+    <div>
+      <Header/>
     </div>
   );
 }
