@@ -1,12 +1,11 @@
-import './styles/styles.css';
-import { Header } from "./components"
+import './styles/styles.css'
+import { Header, Hero } from "./components"
 
-function App() {
+export default function App() {
   return (
     <div>
       <Header/>
+      <Hero/>
     </div>
-  );
+  )
 }
-
-export default App;
