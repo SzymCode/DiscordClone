@@ -1,16 +1,16 @@
-import { BsPlus, BsFillLightningFill } from 'react-icons/bs'
-import { FaDiscord, FaFire } from 'react-icons/fa'
+import { BsPlus, BsFillLightningFill } from 'react-icons/bs';
+import { FaDiscord, FaFire } from 'react-icons/fa';
 
 
 export default function SideBar() {
   return (
     <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-primary text-secondary shadow-lg">
-      <SideBarIcon icon={<FaDiscord size="28"/>}/>
-      <SideBarIcon icon={<BsPlus size="32"/>}/>
-      <SideBarIcon icon={<BsFillLightningFill size="20"/>}/>
-      <SideBarIcon icon={<FaFire size="20"/>}/>
+      <SideBarIcon icon={  <FaDiscord size="28" />            }/>
+      <SideBarIcon icon={  <BsPlus size="32" />               }/>
+      <SideBarIcon icon={  <BsFillLightningFill size="20" />  }/>
+      <SideBarIcon icon={  <FaFire size="20" />               }/>
     </div>
-  )
+  );
 }
 
 function SideBarIcon({ icon, text = 'tooltip 💡' }) {
@@ -21,5 +21,5 @@ function SideBarIcon({ icon, text = 'tooltip 💡' }) {
         {text}
       </span>
     </div>
-  )
+  );
 }

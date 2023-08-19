@@ -1,11 +1,24 @@
-import './styles/styles.css'
-import { Header, Hero } from "./components"
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-export default function App() {
+import { Header, Hero, Home } from "./components";
+import './styles/styles.css';
+
+function App() {
   return (
-    <div>
-      <Header/>
-      <Hero/>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={
+          <React.Fragment>
+            <Header />
+            <Hero />
+          </React.Fragment>
+        } />
+        <Route exact path="/channels" element={ <Home /> } />
+        <Route exact path="/channels/:id" element={ <Home /> } />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;
