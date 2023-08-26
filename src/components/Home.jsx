@@ -1,11 +1,11 @@
 import { ChevronDownIcon, PlusIcon } from "@heroicons/react/outline";
 import { MicrophoneIcon, PhoneIcon, CogIcon } from "@heroicons/react/solid";
-import Channel from "./Channel";
-import ServerIcon from "./ServerIcon";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { useNavigate } from "react-router-dom";
+
+import { Channel, Chat, ServerIcon } from "../components"
 
 export default function Home() {
   const navigate = useNavigate();
@@ -71,7 +71,7 @@ export default function Home() {
                 className="h-10 rounded-full"
                 onClick={() => auth.signOut()}
               />
-              <h4 className="text-white text-xs font-medium">
+              <h4 className="text-white text-xs font-medium pl-1">
                 {user?.displayName}{" "}
                 <span className="text-[#b9bbbe] block">
                   #{user?.uid.substring(0, 4)}
@@ -92,8 +92,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-
+        <div className="bg-[#36393f] flex-grow">
+          <Chat />
+        </div>
       </div>
     </>
   );
