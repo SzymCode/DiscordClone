@@ -1,21 +1,19 @@
 import { MenuIcon } from "@heroicons/react/outline";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
+import { auth, provider } from "../firebase";
 
 export default function Header() {
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
 
-  async function signIn(e) {
+  function signIn(e) {
     e.preventDefault();
-    const authProvider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, authProvider);
-      window.location.href = "/channels";
-    } catch (error) {
-      alert(error.message);
-    }
-  }
+    auth
+      .signInWithPopup(provider)
+      .then(() => navigate("/channels"))
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <header className="flex items-center justify-between py-4 px-6 bg-discord_blue">
@@ -31,7 +29,7 @@ export default function Header() {
       </div>
       <div className="flex space-x-4">
         <button className="bg-white p-2 rounded-full text-xs md:text-sm px-4 focus:outline-none text-black hover:shadow-2xl hover:text-discord_blurple transition duration-200 ease-in-out whitespace-nowrap"
-            onClick={!user ? signIn : () => window.location.href = "/channels"}>
+            onClick={!user ? signIn : () => navigate("/channels")}>
           {!user ? "Login" : "Open Discord"}
         </button>
         <MenuIcon className="h-9 text-white cursor-pointer lg:hidden" />
