@@ -5,9 +5,10 @@ Discord clone built by following a step-by-step YouTube tutorial by Ali Codes. I
 
 
 
-
-<details><summary> <h2>  🚀 Installation & Run </summary>
-
+<br>
+<details><summary> 🚀 Installation & Run </summary>
+<br>
+  
 - First make sure u have installed latest versions of [ReactJS, NodeJS,](https://react.dev/learn/installation) [Tailwind CSS](https://tailwindcss.com/docs/installation) and [Redux](https://redux.js.org/)
 
 - Clone this repository or download latest release
